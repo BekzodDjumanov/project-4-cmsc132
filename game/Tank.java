@@ -40,14 +40,14 @@ public class Tank extends Polygon implements KeyListener {
     }
 
     // Tank body
-    brush.setColor(new Color(34, 139, 34)); // army green
+    brush.setColor(new Color(34, 139, 34));
     brush.fillPolygon(xPoints, yPoints, points.length);
 
     // Dark outline
     brush.setColor(new Color(0, 80, 0));
     brush.drawPolygon(xPoints, yPoints, points.length);
 
-    // Turret (small circle in center)
+    // Turret
     cx = 0;
     cy = 0;
     for (int i = 0; i < points.length; i++) {
@@ -62,7 +62,6 @@ public class Tank extends Polygon implements KeyListener {
     brush.setColor(new Color(0, 60, 0));
     brush.drawOval(cx - 8, cy - 8, 16, 16);
 
-    // Barrel (line pointing in direction of travel)
     int barrelEndX = (int) (cx + 20 * Math.cos(Math.toRadians(rotation)));
     int barrelEndY = (int) (cy + 20 * Math.sin(Math.toRadians(rotation)));
     brush.setColor(new Color(0, 60, 0));

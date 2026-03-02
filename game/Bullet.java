@@ -2,7 +2,6 @@
  * CLASS: Bullet
  * DESCRIPTION: A projectile fired by the tank, travels in the direction
  *              the tank is facing when fired.
- * AUTHORS: Your Name, Teammate's Name
  */
 import java.awt.*;
 

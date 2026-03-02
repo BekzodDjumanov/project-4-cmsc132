@@ -43,7 +43,6 @@ class Polygon {
     Point center = findCenter();
     Point[] points = new Point[shape.length];
     for (int i = 0; i < shape.length; i++) {
-      //    for (Point p : shape) {
       Point p = shape[i];
       double x =
         ((p.x - center.x) * Math.cos(Math.toRadians(rotation))) -

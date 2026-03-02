@@ -33,7 +33,7 @@ public class TankBattle extends Game {
     brush.fillRect(0, 0, width, height);
 
     // Bullets
-    tank.bullets.removeIf(b -> !b.isActive()); // lambda!
+    tank.bullets.removeIf(b -> !b.isActive()); // LAMBDA HERE
     for (Bullet b : tank.bullets) {
       b.move();
       b.checkBounds(width, height);
