@@ -13,7 +13,7 @@ public class Bullet extends Polygon {
 
   public Bullet(Point position, double direction) {
     super(
-      new Point[] { new Point(0, 0), new Point(6, 2), new Point(6, -2) },
+      new Point[] { new Point(0, 0), new Point(10, 4), new Point(10, -4) },
       position,
       direction
     );
@@ -39,6 +39,10 @@ public class Bullet extends Polygon {
     ) {
       active = false;
     }
+  }
+
+  public void deactivate() {
+    active = false;
   }
 
   public void paint(Graphics brush) {

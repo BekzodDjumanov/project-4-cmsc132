@@ -2,12 +2,13 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
-public class Tank extends Polygon implements KeyListener {
+public class Tank extends Polygon implements KeyListener, Collidable {
 
   private boolean forward, left, right, backward;
   private int cx, cy;
   private double speed = 3.0;
   public ArrayList<Bullet> bullets = new ArrayList<>();
+  private boolean active = true;
 
   public Tank(Point[] shape, Point position, double rotation) {
     super(shape, position, rotation);
@@ -39,15 +40,15 @@ public class Tank extends Polygon implements KeyListener {
       yPoints[i] = (int) points[i].y;
     }
 
-    // Tank body
+    // tank body
     brush.setColor(new Color(34, 139, 34));
     brush.fillPolygon(xPoints, yPoints, points.length);
 
-    // Dark outline
+    // dark outline
     brush.setColor(new Color(0, 80, 0));
     brush.drawPolygon(xPoints, yPoints, points.length);
 
-    // Turret
+    // turret
     cx = 0;
     cy = 0;
     for (int i = 0; i < points.length; i++) {
@@ -89,6 +90,10 @@ public class Tank extends Polygon implements KeyListener {
     if (e.getKeyCode() == KeyEvent.VK_DOWN) backward = false;
     if (e.getKeyCode() == KeyEvent.VK_LEFT) left = false;
     if (e.getKeyCode() == KeyEvent.VK_RIGHT) right = false;
+  }
+
+  public boolean isActive() {
+    return active;
   }
 
   public void keyTyped(KeyEvent e) {}
